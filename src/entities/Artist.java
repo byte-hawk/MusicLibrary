@@ -3,7 +3,7 @@ package entities;
 import java.util.*;
 
 public class Artist {
-    public static int counter = 0;
+    public static int counter = 1;
     private int artistId;
     private String firstName;
     private String lastName;

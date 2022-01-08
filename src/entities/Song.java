@@ -1,7 +1,7 @@
 package entities;
 
 public class Song {
-    public static int counter = 0;
+    public static int counter = 1;
     private int songId;
     private int artistId;
     private String title;

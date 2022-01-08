@@ -64,7 +64,7 @@ public class User {
         }
     }
 
-    public static int counter = 0;
+    public static int counter = 1;
     private int userId;
 
     private String firstName;
