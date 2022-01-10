@@ -40,6 +40,9 @@ public class MusicLibrary {
         if(null != userSongPlayCount){
             currentUserSongPlayCount = userSongPlayCount.containsKey(songId) ? userSongPlayCount.get(songId) : 0;
         }
+        else{
+            userSongPlayCount = new HashMap<>();
+        }
         userSongPlayCount.put(songId, currentUserSongPlayCount + 1);
         userPlayHistory.put(userId, userSongPlayCount);
     }
@@ -68,7 +71,7 @@ public class MusicLibrary {
 
         List<Map.Entry<Integer, Integer>> usersTop10Songs = getTopNByValue(userSongPlayCountMap, 10);
         usersTop10Songs.forEach(entry -> {
-            System.out.print("Song: "+songs.get(entry.getKey()).getTitle()+
+            System.out.println("Song: "+songs.get(entry.getKey()).getTitle()+
                     ", played : "+ entry.getValue() +" times.");
         } );
     }
@@ -79,7 +82,7 @@ public class MusicLibrary {
     public void getTop10Songs(){
         List<Map.Entry<Integer, Integer>> top10Songs = getTopNByValue(songPlayCounts, 10);
         top10Songs.forEach(entry -> {
-            System.out.print("Song: "+songs.get(entry.getKey()).getTitle()+
+            System.out.println("Song: "+songs.get(entry.getKey()).getTitle()+
                     ", played : "+ entry.getValue() +" times.");
         } );
     }

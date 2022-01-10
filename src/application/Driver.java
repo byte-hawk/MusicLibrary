@@ -7,6 +7,7 @@ public class Driver {
 
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
+        sc.useDelimiter(System.lineSeparator());
         String addAgain;
         int userId, artistId, songId;
 
@@ -139,8 +140,8 @@ public class Driver {
         do {
             try{
                 System.out.println("Please enter user details to add an song.");
-                System.out.println("Title  : ");
-                String title = sc.nextLine();
+                System.out.print("Title  : ");
+                String title = sc.next();
                 System.out.print("Genre : ");
                 String genre = sc.next();
                 System.out.print("Release year : ");
@@ -155,7 +156,7 @@ public class Driver {
             catch (Exception ex){
                 System.out.println(ex.getMessage());
             }
-        System.out.println("Would you like to add another user?(Y/n)");
+        System.out.println("Would you like to add another song?(Y/n)");
             addAgain = sc.next();
         } while (addAgain.equals("Y"));
     }
